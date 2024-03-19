@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="shortcut icon" href="img/logo.png" type="">
+    <title>Dashboard</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/CSS/Profile.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        .row.content {
+            height: 1000px
+        }
+        
+        .sidenav {
+            background-color: #f1f1f1;
+            height: 100%;
+        }
+        
+        .form-container {
+            width: 400px;
+            /* Adjust the width as needed */
+            margin: 0 auto;
+            /* Center the container horizontally */
+        }
+        /* Style for form inputs */
+        
+        form input {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        /* Add gap between form container and buttons */
+        
+        .form-buttons {
+            text-align: center;
+            margin-top: 20px;
+            /* Adjust the gap as needed */
+        }
+    </style>
+
+    <script>
+        function validateForm() {
+            let username = document.forms["profile"]["username"].value;
+            let email = document.forms["profile"]["email"].value;
+            let password = document.forms["profile"]["password"].value;
+            let confirm_password = document.forms["profile"]["confirm_password"].value;
+
+            if (username == "") {
+                alert("Enter your username");
+                return false;
+            }
+            if (email == "") {
+                alert("Enter your email address");
+                return false;
+            }
+            if (password == "") {
+                alert("Enter your password");
+                return false;
+            }
+            if (confirm_password == "") {
+                alert("Enter your confirm password");
+            }
+            if (confirm_password != password) {
+                alert("Passwords do not match");
+                return false;
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+    <header style="width: 100%; height: 70px; background-color: #181C25">
+        <nav>
+            <a style="margin-left: 15px;" href="index.html">
+                <img src="/Image/logo.png" alt="" style="width: 50px; margin: 10px;">
+                <img src="/Image/Name.png" alt="" style="height: 25px;">
+            </a>
+            <a style=" margin-left: 400px; width: 700px; height: 20px; background-color: #181C25; font-size: 20px ; color: #ffffff;">Smart Watering Dashboard, Unlock Your Unlimited Potential Today</a>
+
+            <div class="dropdown" style="margin-left: 525px; ">
+                <img src="/Image/Ellipse 5.png" alt="" style="width: 40px;">
+                <button style="background-color: #181C25;"><p style="color: #fff;">
+          Cha Cha <img src="/Image/Polygon 1.png" alt="" style="width: 10px; margin-left: 10px; ">
+        </p></button>
+                <div class="dropdown-options">
+                    <a href="Profile.html">Account</a>
+                    <a href="Settings.html">AboutUs</a>
+                    <a href="signin.html">Logout</a>
+                </div>
+            </div>
+
+        </nav>
+    </header>
+
+    <!-- -------------------------------------------Ead Head------------------------ -->
+
+    <div class="container-fluid" style="margin-right: 0%">
+        <div class="row content" style="background-color: black;">
+            <div class="profile">
+                <a><img src="/Image/Ellipse 5.png" alt="" style="width: 200px; height: 200px; margin-left: 850px; margin-top: 50px; "></a>
+            </div>
+            <center>
+                <div class="container">
+                    <div class="information">
+                        <div class="form-container">
+
+                            <form name="profile" action="profile" onsubmit="return validateForm()" method="POST">
+                                <input type="text" name="username" id="username" placeholder="username" class="username">
+                                <input type="email" name="email" id="email" placeholder="email" class="email">
+                                <input type="password" name="password" id="password" placeholder="password" class="password">
+                                <input type="password" name="confirm_password" id="confirm_password" placeholder="confirm password" class="confirm_password">
+                                <a href="/static/index.html"><input type="submit" value="SAVE" class="button"></a>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </center>
+        </div>
+    </div>
+    </div>
+    </div>
+
+</body>
+
+</html>

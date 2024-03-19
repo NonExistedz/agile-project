@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/CSS/forget.css">
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+
+    <script>
+        function validateForm() {
+            let email = document.forms["forget"]["email"].value;
+
+            if (email == "") {
+                alert("Enter your email address");
+                return false;
+            }
+        }
+    </script>
+
+    <title>forget</title>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="col-left">
+            <div class="info-left"></div>
+        </div>
+        <div class="col-right">
+            <div class="logo">Recover your account</div>
+            <div class="form">
+                <form name="forget" action="#" onsubmit="return validateForm()" method="POST">
+                    <input type="email" name="email" id="email" placeholder="email" class="email">
+                </form>
+                <a href="recovered.html"><input type="submit" value="RECOVER" class="button"></a>
+                <a href="signin.html"><input type="submit" value="SIGN IN" class="button"></a>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
